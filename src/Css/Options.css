@@ -1,0 +1,77 @@
+.card-container{
+    width: 250px;
+    overflow: hidden;
+    box-shadow:0px 0px 15px -5px ;
+    margin-left: 50px;
+    margin-top: 150px;
+  }
+  
+  
+  .card-container:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 15px 0px;
+  }
+  
+  .image-container img{
+  
+    overflow: hidden;
+
+    height: 400px;
+    
+    
+  }
+   
+  .card-content{
+    margin: 1rem;
+    margin-top: 0.3rem;
+    
+  }
+
+  h3,p{
+    margin:0;
+    padding: 0;
+  }
+
+  .card-title{
+    margin-bottom: 0.5rem;
+    justify-content: center;
+  }
+
+  .btn{
+    display:flex;
+    justify-content: center;
+   /*  margin: 0rem;
+    color: aliceblue;
+    font-size: large;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: black;
+    margin-left: auto; */
+  }
+
+  .btn button{
+    padding: 0.5rem;
+    background-color: rgb(31, 34, 36);
+    border: none;
+    transition: 0.2s;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: aliceblue;
+  }
+
+  .btn button:hover{
+    background: rgba(29, 111, 233, 0.1) ;
+    color: black;
+  }
+
+
+  .align{
+    display: flex;
+    margin-right: 10px;
+    margin-left: 150px;
+    
+  }
+
+
+ /*  *{
+    background-color: beige;
+  } */
