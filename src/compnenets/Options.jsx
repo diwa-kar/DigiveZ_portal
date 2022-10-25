@@ -34,7 +34,7 @@ const Options = () => {
         </div>
 
         <div className="btn">
-          <Link to="/dqreport">
+          <Link to="/dq_report">
             <button>
               <a>Get started </a>
             </button>

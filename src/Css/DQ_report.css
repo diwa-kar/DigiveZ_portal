@@ -1,0 +1,27 @@
+.dragfiles{
+    width: 500px;
+    justify-content: center;
+    background-color: aliceblue;
+    margin-top: 200px;
+    margin-left: 500px;
+
+}
+
+.DQ_parent{
+    /* background-color: rgb(238, 233, 228); */
+    background-color: rgb(215, 244, 244);
+
+    height: 100vh;
+}
+
+.h1DQ{
+    font-size:xx-large;
+    text-align: center;
+    /* background-color: rgb(117, 126, 126);
+    color: aliceblue; */
+    background-color: rgb(52, 58, 58);
+    color: aliceblue;
+   
+    font-weight: 600;
+
+}

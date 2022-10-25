@@ -29,20 +29,10 @@ const DQreport = () => {
         // await res.json();
 
 
-        const res = await fetch("http://127.0.0.1:5000/api/dqreport", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ csvFile }),
-        });
-        await res.json();
-        console.log("Im from post method");
- 
 
     };
 
-    
+
 
 
     const [csvFile, setcsvFile] = useState()
@@ -58,6 +48,7 @@ const DQreport = () => {
         const rows = str.slice(str.indexOf('\n') + 1).split('\n');
         // console.log(headers)
         // console.log(rows)
+       
 
 
 
@@ -70,8 +61,8 @@ const DQreport = () => {
             return eachObject;
         })
         setcsvArray(newArray)
-     
-        console.log(newArray)
+
+        // console.log(newArray)
 
 
 
@@ -85,15 +76,36 @@ const DQreport = () => {
         reader.onload = function (e) {
             const text = e.target.result;
             processCsv(text)
-           
+
             // console.log(text);
         }
-
 
         reader.readAsText(file);
 
 
+        
+        console.log("im inside fetch")
+        console.log(csvArray)
 
+        const csvUpload = { csvArray };
+        
+        fetch("http://127.0.0.1:5000/api/dqreport", {
+        
+          method: "POST",
+          headers: {
+             'Accept': 'application/json',
+             'Content-Type': 'application/json',
+          },
+          body:  JSON.stringify(csvUpload)
+        })
+        .then(function(response){ 
+        return response.json();
+        
+         
+        })
+
+        
+       
 
     }
 

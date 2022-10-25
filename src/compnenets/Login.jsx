@@ -47,7 +47,7 @@ const Login = () => {
 
       <div className="bg-gray-100 flex flex-col justify-center">
         <form className="max-w-[400px] w-full mx-auto bg-white p-4">
-          <h2 className="text-4xl font-bold text-center py-6">DigiVerse</h2>
+          <h2 className="text-4xl font-bold text-center py-6">DigiverZ</h2>
           {errorMessage.length > 0 && (
             <div style={{ marginBottom: "10px", color: "red" }}>
               {errorMessage}
