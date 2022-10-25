@@ -38,7 +38,7 @@ const DQreport = () => {
         });
         await res.json();
         console.log("Im from post method");
-
+ 
 
     };
 
