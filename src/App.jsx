@@ -18,36 +18,35 @@ import DQreport2 from "./compnenets/DQreport2";
 import DQ_report from "./compnenets/DQ_report";
 import DQ_result from "./compnenets/DQ_result";
 
+import { NextUIProvider } from '@nextui-org/react';
+import DQ_history from "./compnenets/DQ_history";
+
 
 
 
 const App = () => (
   <div>
-   <BrowserRouter>
-      <div>
-        <Routes>
-            <Route path="/" element={<Landing></Landing>}/>
-            <Route path="/login" element={<Login></Login>}/>
-            <Route path="/options" element={<Options></Options>}/>
-          {/*   <Route path="/dqreport" element={<DQreport></DQreport>}/> */}
-            <Route path="/dqreport" element ={<DQreport2></DQreport2>}/>
-            <Route path="/dq_report" element={<DQ_report/>}/>
-
-            <Route path="/modelbuilder" element={<Modelbuilder></Modelbuilder>}/>
-            <Route path="/salesforecast" element={<Salesforecast></Salesforecast>}/>
-            <Route path="/analyzer" element={<Analyzer></Analyzer>}/>
-            <Route path="/mbresult" element={<MbResult></MbResult>}/>
-            <Route path="/mbresulthistory" element={<MbResultHistory></MbResultHistory>}/>
-            <Route path="/dqresult" element={<DQ_result></DQ_result>}/>
-            
-
-        </Routes>
-
-
-      </div>
-   
-   
-   </BrowserRouter>
+    <NextUIProvider>
+      <BrowserRouter>
+        <div>
+          <Routes>
+            <Route path="/" element={<Landing></Landing>} />
+            <Route path="/login" element={<Login></Login>} />
+            <Route path="/options" element={<Options></Options>} />
+            {/*   <Route path="/dqreport" element={<DQreport></DQreport>}/> */}
+            <Route path="/dqreport" element={<DQreport2></DQreport2>} />
+            <Route path="/dq_report" element={<DQ_report />} />
+            <Route path="/modelbuilder" element={<Modelbuilder></Modelbuilder>} />
+            <Route path="/salesforecast" element={<Salesforecast></Salesforecast>} />
+            <Route path="/analyzer" element={<Analyzer></Analyzer>} />
+            <Route path="/mbresult" element={<MbResult></MbResult>} />
+            <Route path="/mbresulthistory" element={<MbResultHistory></MbResultHistory>} />
+            <Route path="/dqresult" element={<DQ_result></DQ_result>} />
+            <Route path="/dqhistory" element={<DQ_history></DQ_history>}/>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </NextUIProvider>
   </div>
 );
 

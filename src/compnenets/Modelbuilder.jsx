@@ -5,6 +5,7 @@ import '../Css/Modelbuilder.css'
 
 
 import { Link } from "react-router-dom";
+import { Text } from "@nextui-org/react";
 
 const Modelbuilder = () => {
 
@@ -124,7 +125,20 @@ const Modelbuilder = () => {
 
   return (
     <section className='Main_container'>
-         <p className='pcar'>Car Price Prediction</p>
+       <div className="eda-head">
+                <Text
+                    h1
+                    size={40}
+                    className="dq-head"
+                    css={{
+                        textGradient: "45deg, $blue600 -10%, $black 80%",
+                    }}
+                    weight="bold"
+                >
+                    EDA analysis History
+                </Text>
+            </div>
+         {/* <p className='pcar'>Car Price Prediction</p> */}
 
       <div className='modelbuilder_parent'>
 
