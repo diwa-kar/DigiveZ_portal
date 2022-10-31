@@ -22,6 +22,7 @@
     overflow: scroll;
     margin: 0 5%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -34,10 +35,11 @@
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 12px;
+
 }
 
 *::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: #171616;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -202,7 +204,7 @@ table tbody td {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    
+
     padding: .4rem 0 0 2rem;
 
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -210,14 +212,57 @@ table tbody td {
 
 
 
-.sidenav_icon{
-   display: block;
-   
+.sidenav_icon {
+    display: block;
+
 }
 
-.sidenav-text{
+.sidenav-text {
     width: 50%;
     height: 3rem;
 }
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx navigation icon xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx for graph imagesxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+
+.univariate-graphs-cont {
+    height: 30rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+    padding: 2rem 3rem;
+}
+
+.upcomming-graph-cont,
+.hist-graph-cont {
+    height: inherit;
+    width: 22%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+
+}
+
+.eda-gh-btn-cont {
+    width: 3rem;
+    margin: 0 20%;
+}
+
+.eda-select-inp {
+    margin: 0 1rem;
+}
+
+.upcomming-graph-cont h4,
+.hist-graph-cont h4 {
+    text-align: center;
+    font-size: x-large;
+    font-weight: 500;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx for graph images xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */

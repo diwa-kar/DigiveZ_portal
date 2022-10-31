@@ -1,12 +1,25 @@
 import React from 'react'
 import Axios from "axios";
 import { useEffect, useState } from 'react';
-import { Table } from "antd";
+import { Table, Select } from "antd";
 
 import { Text } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Popover, Button } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
+
+import ModalImage from "react-modal-image";
+
+//  importing the images for the graphs
+
+import graph_img_1 from '../assets/graph1.png'
+import graph_img_2 from '../assets/graph2.png'
+import graph_img_3 from '../assets/graph3.png'
+import graph_img_4 from '../assets/graph4.png'
+import graph_img_5 from '../assets/graph5.png'
+import graph_img_6 from '../assets/graph6.png'
+import graph_img_7 from '../assets/graph7.png'
+import graph_img_8 from '../assets/graph8.png'
 
 import '../Css/DQ_result.css'
 
@@ -55,7 +68,7 @@ const DQ_result = () => {
     const columns = [
         {
             title: "List of columns",
-            
+
             dataIndex: "list",
             width: 150,
         },
@@ -190,7 +203,194 @@ const DQ_result = () => {
             color: isActive ? 'blue' : 'black'
         }
     }
+   /*  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx usestate variable for grpahs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+    const [graph_1, setgraph_1] = useState("");
+    const [graph_2, setgraph_2] = useState("");
+    const [graph_3, setgraph_3] = useState("");
 
+    const [graph_8, setgraph_8] = useState('')
+    // bivariate graphs usestates
+    const [graph_4, setgraph_4] = useState("");
+    const [graph_4_1, setgraph_4_1] = useState("");
+
+    const [graph_5, setgraph_5] = useState("");
+    const [graph_5_1, setgraph_5_1] = useState("");
+
+    const [graph_6, setgraph_6] = useState("");
+    const [graph_6_1, setgraph_6_1] = useState("");
+
+    const [graph_7, setgraph_7] = useState("");
+    const [graph_7_1, setgraph_7_1] = useState("");
+     /*  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx usestate variable for grpahs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+    /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx handle change function for graphs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+    const handleChange = (selectedoption) => {
+        setgraph_1(selectedoption);
+        console.log(selectedoption);
+    };
+    const handleChangeq = (selectedoption) => {
+        setgraph_2(selectedoption);
+        console.log(selectedoption);
+    };
+    const handleChange_3 = (selectedoption) => {
+        setgraph_3(selectedoption);
+        console.log(selectedoption);
+    };
+
+    // handleChange for bivariate graph
+    const handleChange_4 = (selectedoption) => {
+        setgraph_4(selectedoption);
+        console.log(selectedoption);
+    };
+
+    const handleChange_4_1 = (selectedoption) => {
+        setgraph_4_1(selectedoption);
+        console.log(selectedoption);
+    };
+
+    const handleChange_5 = (selectedoption) => {
+        setgraph_5(selectedoption);
+        console.log(selectedoption);
+    };
+
+    const handleChange_5_1 = (selectedoption) => {
+        setgraph_5_1(selectedoption);
+        console.log(selectedoption);
+    };
+    const handleChange_6 = (selectedoption) => {
+        setgraph_6(selectedoption);
+        console.log(selectedoption);
+    };
+
+    const handleChange_6_1 = (selectedoption) => {
+        setgraph_6_1(selectedoption);
+        console.log(selectedoption);
+    };
+
+    const handleChange_7 = (selectedoption) => {
+        setgraph_7(selectedoption);
+        console.log(selectedoption);
+    };
+    const handleChange_7_1 = (selectedoption) => {
+        setgraph_7_1(selectedoption);
+        console.log(selectedoption);
+    };
+
+    const handleChange_8 = (selectedoption) => {
+        setgraph_8(selectedoption);
+        console.log(selectedoption);
+    };
+
+    /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx handle change function for graphs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+    /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx posting to graph endpoints to flask xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+    const handlehitgraph_1 = async (e) => {
+        const res = await fetch("http://127.0.0.1:5000/api/dqgraph_1", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                graph_1,
+            }),
+        });
+        await res.json();
+    };
+
+    const handlehitgraph_2 = async (e) => {
+        const res = await fetch("http://127.0.0.1:5000/api/dqgraph_2", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                graph_2,
+            }),
+        });
+        await res.json();
+    };
+
+    const handlehitgraph_3 = async (e) => {
+        const res = await fetch("http://127.0.0.1:5000/api/dqgraph_3", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                graph_3,
+            }),
+        });
+        await res.json();
+    };
+    const handlehitgraph_4 = async (e) => {
+        const res = await fetch("http://127.0.0.1:5000/api/dqgraph_4", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                graph_4,
+                graph_4_1,
+            }),
+        });
+        await res.json();
+    };
+
+    const handlehitgraph_5 = async (e) => {
+        const res = await fetch("http://127.0.0.1:5000/api/dqgraph_5", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                graph_5,
+                graph_5_1,
+            }),
+        });
+        await res.json();
+    };
+    const handlehitgraph_6 = async (e) => {
+        const res = await fetch("http://127.0.0.1:5000/api/dqgraph_6", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                graph_6,
+                graph_6_1,
+            }),
+        });
+        await res.json();
+    };
+    const handlehitgraph_7 = async (e) => {
+        const res = await fetch("http://127.0.0.1:5000/api/dqgraph_7", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                graph_7,
+                graph_7_1,
+            }),
+        });
+        await res.json();
+    };
+    const handlehitgraph_8 = async (e) => {
+        const res = await fetch("http://127.0.0.1:5000/api/dqgraph_8", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                graph_8,
+
+            }),
+        });
+        await res.json();
+    };
+
+    /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx posting to graph endpoints to flask xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 
     return (
@@ -523,7 +723,291 @@ const DQ_result = () => {
                     </tbody>
                 </table>
             </div>
-     
+            <div className="eda-head">
+                <Text
+                    h1
+                    size={60}
+                    className="dq-head"
+                    css={{
+                        textGradient: "45deg, $blue600 -10%, $black 80%",
+                    }}
+                    weight="bold"
+                >
+                    Univariate Analysis
+                </Text>
+            </div>
+            <div className="univariate-graphs-cont">
+                <div className="hist-graph-cont">
+                    <h4>Histogram</h4>
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+                    <div className="eda-gh-btn-cont">
+                        <Button className="eda-gh-btn" flat onPress={handlehitgraph_1}>Analyze</Button>
+                    </div>
+                    <ModalImage
+                        className="mb_analyticsimg_size"
+                        small={graph_img_1}
+                        large={graph_img_1}
+                        alt=""
+
+                    />
+
+                </div>
+                <div className="upcomming-graph-cont">
+                    <h4>Scaterplot</h4>
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChangeq}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+                    <div className="eda-gh-btn-cont">
+                        <Button className="eda-gh-btn" flat onPress={handlehitgraph_2}>Analyze</Button>
+                    </div>
+                    <ModalImage
+                        className="mb_analyticsimg_size"
+                        small={graph_img_2}
+                        large={graph_img_2}
+                        alt="Data from Diff country!"
+                    />
+
+                </div>
+                <div className="upcomming-graph-cont">
+                    <h4>kdeplot</h4>
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange_3}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+                    <div className="eda-gh-btn-cont">
+                        <Button className="eda-gh-btn" flat onPress={handlehitgraph_3}>Analyze</Button>
+                    </div>
+                    <ModalImage
+                        className="mb_analyticsimg_size"
+                        small={graph_img_3}
+                        large={graph_img_3}
+                        alt="Data from Diff country!"
+                    />
+
+                </div>
+                <div className="upcomming-graph-cont">
+                    <h4>Countplot</h4>
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange_8}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+                    <div className="eda-gh-btn-cont">
+                        <Button className="eda-gh-btn" flat onPress={handlehitgraph_8}>Analyze</Button>
+                    </div>
+                    <ModalImage
+                        className="mb_analyticsimg_size"
+                        small={graph_img_8}
+                        large={graph_img_8}
+                        alt="Data from Diff country!"
+                    />
+
+                </div>
+            </div>
+            <div className="eda-head">
+                <Text
+                    h1
+                    size={60}
+                    className="dq-head"
+                    css={{
+                        textGradient: "45deg, $blue600 -10%, $black 80%",
+                    }}
+                    weight="bold"
+                >
+                    Bivariate Analysis
+                </Text>
+            </div>
+            <div className="univariate-graphs-cont">
+                <div className="hist-graph-cont">
+                    <h4>Box Plot</h4>
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange_4}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange_4_1}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+                    <div className="eda-gh-btn-cont">
+                        <Button className="eda-gh-btn" flat onPress={handlehitgraph_4}>Analyze</Button>
+                    </div>
+                    <ModalImage
+                        className="mb_analyticsimg_size"
+                        small={graph_img_4}
+                        large={graph_img_4}
+                        alt="Data from Diff country!"
+                    />
+
+                </div>
+                <div className="hist-graph-cont">
+                    <h4>stripplot</h4>
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange_5}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange_5_1}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+                    <div className="eda-gh-btn-cont">
+                        <Button className="eda-gh-btn" flat onPress={handlehitgraph_5}>Analyze</Button>
+                    </div>
+                    <ModalImage
+                        className="mb_analyticsimg_size"
+                        small={graph_img_5}
+                        large={graph_img_5}
+                        alt="Data from Diff country!"
+                    />
+
+                </div>
+                <div className="hist-graph-cont">
+                    <h4>violinplot</h4>
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange_6}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange_6_1}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+                    <div className="eda-gh-btn-cont">
+                        <Button className="eda-gh-btn" flat onPress={handlehitgraph_6}>Analyze</Button>
+                    </div>
+                    <ModalImage
+                        className="mb_analyticsimg_size"
+                        small={graph_img_6}
+                        large={graph_img_6}
+                        alt="Data from Diff country!"
+                    />
+
+                </div>
+                <div className="hist-graph-cont">
+                    <h4>swarmplot</h4>
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange_7}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+
+                    <Select
+                        size="large"
+                        placeholder="select country"
+                        onChange={handleChange_7_1}
+                        className="eda-select-inp"
+                    >
+                        {clListForGraph.map((cl, i) => (
+                            <options value={cl} key={cl}>
+                                {cl}
+                            </options>
+                        ))}
+                    </Select>
+                    <div className="eda-gh-btn-cont">
+                        <Button className="eda-gh-btn" flat onPress={handlehitgraph_7}>Analyze</Button>
+                    </div>
+                    <ModalImage
+                        className="mb_analyticsimg_size"
+                        small={graph_img_7}
+                        large={graph_img_7}
+                        alt="Data from Diff country!"
+                    />
+
+                </div>
+            </div>
+
+
         </div>
     )
 }

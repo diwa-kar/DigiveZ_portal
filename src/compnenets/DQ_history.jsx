@@ -80,17 +80,8 @@ const DQ_history = () => {
             title: "Date and Time",
             dataIndex: "date_time",
             width: 150,
-            //   render: ((date:string) => getFullDate(date_time))
         },
-        // {
-        //   title: "Gear Type",
-        //   dataIndex: "Transmission_Type",
-        //   width: 150
-        // }, {
-        //   title: "Result",
-        //   dataIndex: "Output",
-        //   width: 150
-        // }
+      
     ];
 
     return (
