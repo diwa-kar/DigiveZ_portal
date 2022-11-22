@@ -131,7 +131,7 @@ const Options = () => {
           </div>
 
           <div className="btn">
-            <Link to="/analyzer">
+            <Link to="/Algo_analyzser">
               <button>
                 <a>Get started </a>
               </button>

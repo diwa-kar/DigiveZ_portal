@@ -12,14 +12,14 @@ import ModalImage from "react-modal-image";
 
 //  importing the images for the graphs
 
-import graph_img_1 from '../assets/graph1.png'
-import graph_img_2 from '../assets/graph2.png'
-import graph_img_3 from '../assets/graph3.png'
-import graph_img_4 from '../assets/graph4.png'
-import graph_img_5 from '../assets/graph5.png'
-import graph_img_6 from '../assets/graph6.png'
-import graph_img_7 from '../assets/graph7.png'
-import graph_img_8 from '../assets/graph8.png'
+import graph_img_01 from '../assets/graph1.png'
+import graph_img_02 from '../assets/graph2.png'
+import graph_img_03 from '../assets/graph3.png'
+import graph_img_04 from '../assets/graph4.png'
+import graph_img_05 from '../assets/graph5.png'
+import graph_img_06 from '../assets/graph6.png'
+import graph_img_07 from '../assets/graph7.png'
+import graph_img_08 from '../assets/graph8.png'
 
 import '../Css/DQ_result.css'
 
@@ -73,6 +73,18 @@ const DQ_result = () => {
             width: 150,
         },
     ];
+    /* use state for graph images */
+    const [graph_img_1, setgraph_img_1] = useState("")
+    const [graph_img_2, setgraph_img_2] = useState("")
+    const [graph_img_3, setgraph_img_3] = useState("")
+    const [graph_img_4, setgraph_img_4] = useState("")
+    const [graph_img_5, setgraph_img_5] = useState("")
+    const [graph_img_6, setgraph_img_6] = useState("")
+    const [graph_img_7, setgraph_img_7] = useState("")
+    const [graph_img_8, setgraph_img_8] = useState("")
+
+    /* use state for graph images */
+
     // ************************** df head ******************************** 
     let df_row_1 = [];
     let df_row_2 = [];
@@ -139,7 +151,7 @@ const DQ_result = () => {
             },
         },
     };
-
+     // ************************** react chart ******************************** 
     /* column list seperation from result array for graph*/
 
     let clListForGraph = [];
@@ -203,7 +215,7 @@ const DQ_result = () => {
             color: isActive ? 'blue' : 'black'
         }
     }
-   /*  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx usestate variable for grpahs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+    /*  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx usestate variable for grpahs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
     const [graph_1, setgraph_1] = useState("");
     const [graph_2, setgraph_2] = useState("");
     const [graph_3, setgraph_3] = useState("");
@@ -221,7 +233,7 @@ const DQ_result = () => {
 
     const [graph_7, setgraph_7] = useState("");
     const [graph_7_1, setgraph_7_1] = useState("");
-     /*  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx usestate variable for grpahs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+    /*  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx usestate variable for grpahs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
     /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx handle change function for graphs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
     const handleChange = (selectedoption) => {
@@ -282,7 +294,7 @@ const DQ_result = () => {
     };
 
     /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx handle change function for graphs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
-
+  /* fgx */
     /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx posting to graph endpoints to flask xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
     const handlehitgraph_1 = async (e) => {
@@ -296,6 +308,11 @@ const DQ_result = () => {
             }),
         });
         await res.json();
+        if (res.status == 200) {
+            console.log("im inside the set image")
+            /*   setgraph_img_1(null) */
+            setgraph_img_1(graph_img_01)
+        } 
     };
 
     const handlehitgraph_2 = async (e) => {
@@ -309,6 +326,12 @@ const DQ_result = () => {
             }),
         });
         await res.json();
+        if (res.status == 200) {
+            console.log("im inside the set image")
+            /*   setgraph_img_1(null) */
+            setgraph_img_2(graph_img_02 )
+        }
+
     };
 
     const handlehitgraph_3 = async (e) => {
@@ -322,6 +345,12 @@ const DQ_result = () => {
             }),
         });
         await res.json();
+        if (res.status == 200) {
+            console.log("im inside the set image")
+            /*   setgraph_img_1(null) */
+            setgraph_img_3(graph_img_03)
+        }
+
     };
     const handlehitgraph_4 = async (e) => {
         const res = await fetch("http://127.0.0.1:5000/api/dqgraph_4", {
@@ -335,6 +364,12 @@ const DQ_result = () => {
             }),
         });
         await res.json();
+        if (res.status == 200) {
+            console.log("im inside the set image")
+            /*   setgraph_img_1(null) */
+            setgraph_img_4(graph_img_04)
+        }
+
     };
 
     const handlehitgraph_5 = async (e) => {
@@ -349,6 +384,12 @@ const DQ_result = () => {
             }),
         });
         await res.json();
+        if (res.status == 200) {
+            console.log("im inside the set image")
+            /*   setgraph_img_1(null) */
+            setgraph_img_5(graph_img_05)
+        }
+
     };
     const handlehitgraph_6 = async (e) => {
         const res = await fetch("http://127.0.0.1:5000/api/dqgraph_6", {
@@ -362,6 +403,12 @@ const DQ_result = () => {
             }),
         });
         await res.json();
+        if (res.status == 200) {
+            console.log("im inside the set image")
+            /*   setgraph_img_1(null) */
+            setgraph_img_6(graph_img_06)
+        }
+
     };
     const handlehitgraph_7 = async (e) => {
         const res = await fetch("http://127.0.0.1:5000/api/dqgraph_7", {
@@ -375,6 +422,12 @@ const DQ_result = () => {
             }),
         });
         await res.json();
+        if (res.status == 200) {
+            console.log("im inside the set image")
+            /*   setgraph_img_1(null) */
+            setgraph_img_7(graph_img_07)
+        }
+
     };
     const handlehitgraph_8 = async (e) => {
         const res = await fetch("http://127.0.0.1:5000/api/dqgraph_8", {
@@ -388,6 +441,12 @@ const DQ_result = () => {
             }),
         });
         await res.json();
+        if (res.status == 200) {
+            console.log("im inside the set image")
+            /*   setgraph_img_1(null) */
+            setgraph_img_8(graph_img_08)
+        }
+
     };
 
     /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx posting to graph endpoints to flask xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -784,7 +843,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_2}
                         large={graph_img_2}
-                        alt="Data from Diff country!"
+                        // alt="Data from Diff country!"
                     />
 
                 </div>
@@ -809,7 +868,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_3}
                         large={graph_img_3}
-                        alt="Data from Diff country!"
+                       /*  alt="Data from Diff country!" */
                     />
 
                 </div>
@@ -834,7 +893,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_8}
                         large={graph_img_8}
-                        alt="Data from Diff country!"
+                       /*  alt="Data from Diff country!" */
                     />
 
                 </div>
@@ -887,7 +946,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_4}
                         large={graph_img_4}
-                        alt="Data from Diff country!"
+                        /* alt="Data from Diff country!" */
                     />
 
                 </div>
@@ -925,7 +984,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_5}
                         large={graph_img_5}
-                        alt="Data from Diff country!"
+                        /* alt="Data from Diff country!" */
                     />
 
                 </div>
@@ -963,7 +1022,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_6}
                         large={graph_img_6}
-                        alt="Data from Diff country!"
+                      /*   alt="Data from Diff country!" */
                     />
 
                 </div>
@@ -1001,7 +1060,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_7}
                         large={graph_img_7}
-                        alt="Data from Diff country!"
+                        /* alt="Data from Diff country!" */
                     />
 
                 </div>

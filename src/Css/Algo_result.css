@@ -1,0 +1,15 @@
+.algo-parent-cont {
+    height: auto;
+    width: 100%;
+    padding: 2rem;
+}
+
+.select-option-cont {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 2rem 1rem;
+}
+
+.algo-target-head {
+    text-align: center;
+}
