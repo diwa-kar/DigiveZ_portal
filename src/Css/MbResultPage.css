@@ -1,0 +1,64 @@
+.mb_analyticsimg_size {
+    height: 15rem;
+    width: auto;
+}
+
+.mb_heading {
+    margin: 0 0 2rem 0;
+}
+
+.result_container {
+    height: 11rem;
+    width: 70%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 20px 20px 0px;
+    margin:  25px 10px 50px 200px;;
+}
+
+
+.result_header {
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.result_dec-1_size {
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 0px 0px 0px;
+}
+
+.result_dec-2_size {
+    font-size: 1.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+.result_cont {
+
+    width: 100%;
+    text-align: center;
+}
+
+.mb_analytics_img_cont {
+    height: 20rem;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    margin: 2rem 2rem 2rem 8rem;
+}
+
+.mb_country_data {
+    padding: .5rem;
+}
+
+
+
+.nav-back-icon-car-price-result{
+   
+
+}

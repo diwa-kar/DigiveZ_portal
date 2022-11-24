@@ -8,14 +8,35 @@ import sales from "../assets/sales_forecast.jpg";
 import salesf from "../assets/sales_forecasting.jpg";
 import algo from "../assets/Algo.jpg";
 
+import { Button } from 'antd';
+
 import { Text } from "@nextui-org/react";
+
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Popover } from "@nextui-org/react";
+
+import { NavLink } from "react-router-dom";
+
+import ModalImage from "react-modal-image";
+
+import { useNavigate } from "react-router-dom"
+import { faBars, faCheck, faDatabase, faGear, faHome, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import "../Css/Options.css";
 
 const Options = () => {
+
+
+  const navLinkSty1es = ({ isActive }) => {
+    return {
+      color: isActive ? 'blue' : 'black'
+    }
+  }
+
   return (
     <div>
-      <div className="eda-head">
+     {/*  <div className="eda-head">
         <Text
           h1
           size={40}
@@ -27,6 +48,94 @@ const Options = () => {
         >
           Our Products
         </Text>
+      </div> */}
+       <div className="eda-head">
+        <div className="nav-back-icon">
+          <div className="btn">
+            <Link to="/">
+              <button style={{ padding: '5px 20px 7px 20px', margin: '-5px 150px 0px 0px' }}>
+                <a>Back</a>
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="eda-head-child">
+          <Text
+            h1
+            size={45}
+            className="dq-head"
+            css={{
+              textGradient: "45deg, $blue600 -10%, $black 80%",
+            }}
+            weight="bold"
+          >
+            Our Products
+          </Text>
+        </div>
+        <div className="nav-popover">
+          <div className="nav-popover-child">
+            <Popover placement="left">
+              <Popover.Trigger>
+                <Button auto flat>
+                  <FontAwesomeIcon icon={faBars} />
+                </Button>
+              </Popover.Trigger>
+              <Popover.Content>
+                <div className="popover-after-cont">
+                  <ul className="sidenav__listitems-main">
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/modelbuilder">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faHome}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Home</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/modelbuilder">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faDatabase}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Model builder</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbresult">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faSearch}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Sales Forcast</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbhistory">
+                        {" "}
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faCheck}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">EDA</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbhistory">
+                        {" "}
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faGear}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Algo analyzer</h3>
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
+              </Popover.Content>
+            </Popover>
+          </div>
+        </div>
       </div>
       <section className="align">
         <div className="card-container">

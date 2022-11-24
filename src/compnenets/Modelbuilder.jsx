@@ -8,7 +8,25 @@ import Axios from "axios";
 import { Link } from "react-router-dom";
 import { Text } from "@nextui-org/react";
 
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Popover } from "@nextui-org/react";
+
+import { NavLink } from "react-router-dom";
+
+import ModalImage from "react-modal-image";
+
+import { useNavigate } from "react-router-dom"
+import { faBars, faCheck, faDatabase, faGear, faHome, faSearch } from '@fortawesome/free-solid-svg-icons';
+
+
 const Modelbuilder = () => {
+
+  const navLinkSty1es = ({ isActive }) => {
+    return {
+      color: isActive ? 'blue' : 'black'
+    }
+  }
 
   useEffect(() => {
     fetchItems();
@@ -135,7 +153,14 @@ const Modelbuilder = () => {
       }),
     });
     await res.json();
-    /*  navigate('/mbresult') */
+     navigate('/mbresultpage')
+   /*  if (res.status == 200) {
+      console.log("im headig to next page")
+
+      setTimeout(() => {
+        navigate("/mbresultpage");
+      }, 2000);
+    } */
   };
 
 
@@ -144,6 +169,95 @@ const Modelbuilder = () => {
   return (
     <section className='Main_container'>
       <div className="eda-head">
+        <div className="nav-back-icon">
+          <div className="btn">
+            <Link to="/options">
+              <button style={{ padding: '5px 20px 7px 20px', margin: '-5px 150px 0px 0px' }}>
+                <a>Back</a>
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="eda-head-child">
+          <Text
+            h1
+            size={45}
+            className="dq-head"
+            css={{
+              textGradient: "45deg, $blue600 -10%, $black 80%",
+            }}
+            weight="bold"
+          >
+           Car price prediction
+          </Text>
+        </div>
+        <div className="nav-popover">
+          <div className="nav-popover-child">
+            <Popover placement="left">
+              <Popover.Trigger>
+                <Button auto flat>
+                  <FontAwesomeIcon icon={faBars} />
+                </Button>
+              </Popover.Trigger>
+              <Popover.Content>
+                <div className="popover-after-cont">
+                  <ul className="sidenav__listitems-main">
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/modelbuilder">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faHome}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Home</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/modelbuilder">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faDatabase}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Model builder</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbresult">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faSearch}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Sales Forcast</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbhistory">
+                        {" "}
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faCheck}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">EDA</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbhistory">
+                        {" "}
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faGear}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Algo analyzer</h3>
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
+              </Popover.Content>
+            </Popover>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="eda-head">
         <Text
           h1
           size={40}
@@ -155,7 +269,7 @@ const Modelbuilder = () => {
         >
           Car price prediction
         </Text>
-      </div>
+      </div> */}
       {/* <p className='pcar'>Car Price Prediction</p> */}
 
       <div className='modelbuilder_parent'>
@@ -266,6 +380,7 @@ const Modelbuilder = () => {
           <Button type="primary" danger htmlType="submit">
             Submit
           </Button> &nbsp;
+          
 
 
 
@@ -277,18 +392,18 @@ const Modelbuilder = () => {
 
         </form>
 
-          <br></br>
-          <br></br>
+        <br></br>
+        <br></br>
 
-          <div className='output_container'>
-            {
-              result_arr.map((res)=>(
-                <h3 key={res._id}>The result is {res.Output}</h3>
-              )  
-              )
-            }
-            <h3>testing the h3 here</h3>
-          </div>
+        <div className='output_container'>
+          {
+            result_arr.map((res) => (
+              <h3 key={res._id}>The result is {res.Output}</h3>
+            )
+            )
+          }
+          <h3>testing the h3 here</h3>
+        </div>
 
       </div>
 

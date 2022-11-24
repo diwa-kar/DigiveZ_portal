@@ -186,6 +186,8 @@ table tbody td {
 
 .nav-back-icon {
     width: 20%;
+    margin-top: 45px;
+    padding-left: 30px;
 }
 
 .nav-popover-child {

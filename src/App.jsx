@@ -7,7 +7,7 @@ import Login from "./compnenets/Login";
 import Options from "./compnenets/Options";
 
 
-import { BrowserRouter, Route, Routes, } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Modelbuilder from "./compnenets/Modelbuilder";
 import Salesforecast from "./compnenets/Salesforecast";

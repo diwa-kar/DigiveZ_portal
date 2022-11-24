@@ -2,13 +2,26 @@ import React from 'react'
 import Axios from "axios";
 import { useEffect, useState } from 'react';
 import { Table, Select } from "antd";
+/* 
+import { 
+    BrowserRouter, 
+    Route, 
+    Link,
+    useHistory
+} from "react-router-dom"; */
 
 import { Text } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Popover, Button } from "@nextui-org/react";
+
 import { NavLink } from "react-router-dom";
 
 import ModalImage from "react-modal-image";
+
+import { useNavigate } from "react-router-dom"
+
+
+import backicon from '../assets/backicon.jpg'
 
 //  importing the images for the graphs
 
@@ -48,9 +61,19 @@ ChartJS.register(
 
 const DQ_result = () => {
 
+  
+
     useEffect(() => {
         getData();
     }, []);
+
+
+   /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx codr for back button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+    const navigate = useNavigate();
+    const handleHistory = () =>{
+        navigate("/dq_report");
+    }
+    /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx codr for back button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
     // const [columnlist, setcolumnlist] = useState([]);
     const [df_eda, setdf_eda] = useState([])
@@ -151,7 +174,7 @@ const DQ_result = () => {
             },
         },
     };
-     // ************************** react chart ******************************** 
+    // ************************** react chart ******************************** 
     /* column list seperation from result array for graph*/
 
     let clListForGraph = [];
@@ -294,7 +317,7 @@ const DQ_result = () => {
     };
 
     /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx handle change function for graphs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
-  /* fgx */
+    /* fgx */
     /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx posting to graph endpoints to flask xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
     const handlehitgraph_1 = async (e) => {
@@ -312,7 +335,7 @@ const DQ_result = () => {
             console.log("im inside the set image")
             /*   setgraph_img_1(null) */
             setgraph_img_1(graph_img_01)
-        } 
+        }
     };
 
     const handlehitgraph_2 = async (e) => {
@@ -329,7 +352,7 @@ const DQ_result = () => {
         if (res.status == 200) {
             console.log("im inside the set image")
             /*   setgraph_img_1(null) */
-            setgraph_img_2(graph_img_02 )
+            setgraph_img_2(graph_img_02)
         }
 
     };
@@ -456,7 +479,23 @@ const DQ_result = () => {
         <div className="eda-parent-cont">
             <div className="nav-and-eda-head">
                 <div className="eda-head">
-                    <div className="nav-back-icon"></div>
+                    <div className="nav-back-icon">
+
+                        {/*  <Button type="primary">
+                            <Icon type="left" />
+                            Backward
+                        </Button> */}
+                       {/*  <Button
+                            auto
+                            color="error"
+                            icon={<backicon fill="currentColor" filled />}
+                        /> */}
+
+                        <Button color="error" auto ghost onClick={handleHistory}>
+                            Back
+                        </Button>
+
+                    </div>
                     <div className="eda-head-child">
                         <Text
                             h1
@@ -843,7 +882,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_2}
                         large={graph_img_2}
-                        // alt="Data from Diff country!"
+                    // alt="Data from Diff country!"
                     />
 
                 </div>
@@ -868,7 +907,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_3}
                         large={graph_img_3}
-                       /*  alt="Data from Diff country!" */
+                    /*  alt="Data from Diff country!" */
                     />
 
                 </div>
@@ -893,7 +932,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_8}
                         large={graph_img_8}
-                       /*  alt="Data from Diff country!" */
+                    /*  alt="Data from Diff country!" */
                     />
 
                 </div>
@@ -946,7 +985,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_4}
                         large={graph_img_4}
-                        /* alt="Data from Diff country!" */
+                    /* alt="Data from Diff country!" */
                     />
 
                 </div>
@@ -984,7 +1023,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_5}
                         large={graph_img_5}
-                        /* alt="Data from Diff country!" */
+                    /* alt="Data from Diff country!" */
                     />
 
                 </div>
@@ -1022,7 +1061,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_6}
                         large={graph_img_6}
-                      /*   alt="Data from Diff country!" */
+                    /*   alt="Data from Diff country!" */
                     />
 
                 </div>
@@ -1060,7 +1099,7 @@ const DQ_result = () => {
                         className="mb_analyticsimg_size"
                         small={graph_img_7}
                         large={graph_img_7}
-                        /* alt="Data from Diff country!" */
+                    /* alt="Data from Diff country!" */
                     />
 
                 </div>

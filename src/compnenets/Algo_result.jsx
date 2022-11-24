@@ -11,11 +11,31 @@ import {
   faTableCells,
   faTableColumns,
 } from "@fortawesome/free-solid-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useNavigate } from "react-router-dom"
 
+import { Link } from "react-router-dom";
+
+
+import { Popover } from "@nextui-org/react";
+
+import { NavLink } from "react-router-dom";
+
+import ModalImage from "react-modal-image";
+
+
+import { faBars, faCheck, faGear, faHome, faSearch } from '@fortawesome/free-solid-svg-icons';
+
 const Algo_result = () => {
+
+  const navLinkSty1es = ({ isActive }) => {
+    return {
+      color: isActive ? 'blue' : 'black'
+    }
+  }
+
 
   const navigate = useNavigate();
 
@@ -176,7 +196,7 @@ const Algo_result = () => {
 
   return (
     <div className="algo-parent-cont">
-      <div className="algo-head-child">
+ {/*      <div className="algo-head-child">
         <Text
           h1
           size={60}
@@ -188,6 +208,94 @@ const Algo_result = () => {
         >
           Algorithm Analyzer
         </Text>
+      </div> */}
+       <div className="eda-head">
+        <div className="nav-back-icon">
+          <div className="btn">
+            <Link to="/Algo_analyzser">
+              <button style={{ padding: '5px 20px 7px 20px', margin: '-5px 150px 0px 0px' }}>
+                <a>Back</a>
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="eda-head-child">
+          <Text
+            h1
+            size={45}
+            className="dq-head"
+            css={{
+              textGradient: "45deg, $blue600 -10%, $black 80%",
+            }}
+            weight="bold"
+          >
+            Algorithm Analyzer
+          </Text>
+        </div>
+        <div className="nav-popover">
+          <div className="nav-popover-child">
+            <Popover placement="left">
+              <Popover.Trigger>
+                <Button auto flat>
+                  <FontAwesomeIcon icon={faBars} />
+                </Button>
+              </Popover.Trigger>
+              <Popover.Content>
+                <div className="popover-after-cont">
+                  <ul className="sidenav__listitems-main">
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/modelbuilder">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faHome}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Home</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/modelbuilder">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faDatabase}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Model builder</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbresult">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faSearch}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Sales Forcast</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbhistory">
+                        {" "}
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faCheck}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">EDA</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbhistory">
+                        {" "}
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faGear}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Algo analyzer</h3>
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
+              </Popover.Content>
+            </Popover>
+          </div>
+        </div>
       </div>
       <div className="eda-csv-name-cont">
         <div className="csv-name-child">
@@ -225,7 +333,18 @@ const Algo_result = () => {
           ))}
         </div>
       </div>
-      <Text h3 className="algo-target-head">Select the target colunm</Text>
+     {/*  <Text h3 className="algo-target-head">Select the target colunm</Text> */}
+      <Text
+            h1
+            size={20}
+            className="dq-head"
+            css={{
+              textGradient: "45deg, $blue600 -10%, $black 80%",
+            }}
+            weight="bold"
+          >
+           Select the target feature
+          </Text>
       <div className="select-option-cont">
         <Select
           onChange={handleChange}

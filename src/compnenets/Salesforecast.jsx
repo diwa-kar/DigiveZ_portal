@@ -27,7 +27,7 @@ const Salesforecast = () => {
 
     });
 
-    console.log(value)
+    console.log(date)
 
   }
 
