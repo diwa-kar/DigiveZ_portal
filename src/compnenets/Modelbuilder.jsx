@@ -28,6 +28,8 @@ const Modelbuilder = () => {
     }
   }
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetchItems();
   }, []);
@@ -153,14 +155,15 @@ const Modelbuilder = () => {
       }),
     });
     await res.json();
-     navigate('/mbresultpage')
-   /*  if (res.status == 200) {
+    /*  navigate('/mbresultpage') */
+    console.log(res.status)
+    if (res.status == 200) {
       console.log("im headig to next page")
 
       setTimeout(() => {
         navigate("/mbresultpage");
       }, 2000);
-    } */
+    }
   };
 
 
@@ -395,7 +398,7 @@ const Modelbuilder = () => {
         <br></br>
         <br></br>
 
-        <div className='output_container'>
+{/*         <div className='output_container'>
           {
             result_arr.map((res) => (
               <h3 key={res._id}>The result is {res.Output}</h3>
@@ -403,7 +406,7 @@ const Modelbuilder = () => {
             )
           }
           <h3>testing the h3 here</h3>
-        </div>
+        </div> */}
 
       </div>
 

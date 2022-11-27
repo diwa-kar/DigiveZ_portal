@@ -506,7 +506,7 @@ const DQ_result = () => {
                             }}
                             weight="bold"
                         >
-                            Data Quality Reporter
+                            Data Quality Report
                         </Text>
                     </div>
                     <div className="nav-popover">

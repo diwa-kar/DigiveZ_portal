@@ -41,8 +41,11 @@ import { NavLink } from "react-router-dom";
 import { Button } from "@nextui-org/react";
 
 
-import graph_img_01 from '../assets/graph1.png'
-import graph_img_02 from '../assets/graph2.png'
+
+import mb_result_2 from '../assets/mb_result_2.jpg'
+import mbresult_1 from '../assets/mbresult_1.jpg'
+
+
 
 
 const MbResultPage = () => {
@@ -241,22 +244,22 @@ const MbResultPage = () => {
               </div>
               <div className="mb_analytics_img_cont">
                 <div className="mb_country_data">
-                  <p>Data from Diff country</p>
+                  <p>Most influencing features</p>
 
                   <ModalImage
                     className="mb_analyticsimg_size"
-                    small={graph_img_01}
-                    large={graph_img_01}
-                    alt="Data from Diff country!"
+                    small={mbresult_1}
+                    large={mbresult_1}
+                    alt="Most influencing features"
                   />;
                 </div>
                 <div className="mb_country_data">
-                  <p>mean Salary </p>
+                  <p>Fuel Type Pie Chart</p>
                   <ModalImage
                     className="mb_analyticsimg_size"
-                    small={graph_img_02}
-                    large={graph_img_02}
-                    alt="Data from Diff country!"
+                    small={mb_result_2}
+                    large={mb_result_2}
+                    alt="Fuel Type"
                   />;
                 </div>
               </div>
