@@ -4,14 +4,19 @@ import { Text } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 
 import DatePicker from 'react-date-picker';
+import ModalImage from "react-modal-image";
 
 import '../Css/Salesforecast.css'
+
+import salesforecastresult from '../assets/salesforecastresult.png' 
 
 
 
 /* import { DatePicker, Space } from 'antd'; */
 
 const Salesforecast = () => {
+
+  const [salesforecast_res, setsalesforecast_res] = useState("")
 
   const salesforecast_date = async (e) => {
     console.log("im heading into sales forecast endpoint")
@@ -26,8 +31,12 @@ const Salesforecast = () => {
       }),
 
     });
-
     console.log(date)
+    if (res.status == 200) {
+      console.log("im inside the set image")
+      /*   setgraph_img_1(null) */
+      setsalesforecast_res(salesforecastresult)
+  }
 
   }
 
@@ -38,49 +47,85 @@ const Salesforecast = () => {
   console.log("Date", date)
 
 
-
-
-
   return (
-    <div className="sales-parent-cont">
-      <div className="sales-head-child">
-        <Text
-          h1
-          size={50}
-          className="dq-head"
-          css={{
-            textGradient: "45deg, $blue600 -10%, $black 80%",
-          }}
-          weight="bold"
-        >
-          Sales Forecast
-        </Text>
-      </div>
-      {/* <Space direction="vertical">
-        <DatePicker onChange={onChange} />
+    // <div className="sales-parent-cont">
+    //   <div className="sales-head-child">
+    //     <Text
+    //       h1
+    //       size={50}
+    //       className="dq-head"
+    //       css={{
+    //         textGradient: "45deg, $blue600 -10%, $black 80%",
+    //       }}
+    //       weight="bold"
+    //     >
+    //       Sales Forecast
+    //     </Text>
+    //   </div>
+    //   {/* <Space direction="vertical">
+    //     <DatePicker onChange={onChange} />
        
-      </Space> */}
-     {/*  <div className="date_picker">
-        <DatePicker onChange={onChange} value={value} format='dd-MM-yyyy'/>
+    //   </Space> */}
+    //  {/*  <div className="date_picker">
+    //     <DatePicker onChange={onChange} value={value} format='dd-MM-yyyy'/>
 
-      </div> */}
-      <div className="date_picker">
-       {/*  <h1>The selected date : {date}</h1> */}
-        <input type="date" placeholder="enter the date" onChange={e=>setdate(e.target.value)}></input>
-      </div>
-
-
-
-      <div className="sales_button">
-        <Button className="eda-gh-btn" flat onPress={salesforecast_date}>
-          Analyze
-        </Button>
-      </div>
+    //   </div> */}
+    //   <div className="date_picker">
+    //    {/*  <h1>The selected date : {date}</h1> */}
+    //     <input type="date" placeholder="enter the date" onChange={e=>setdate(e.target.value)}></input>
+    //   </div>
 
 
 
+    //   <div className="sales_button">
+    //     <Button className="eda-gh-btn" flat onPress={salesforecast_date}>
+    //       Analyze
+    //     </Button>
+    //   </div>
+
+
+    // </div>
+    <div className="sales-parent-cont">
+    <div className="sales-head-child">
+      <Text
+        h1
+        size={60}
+        className="dq-head"
+        css={{
+          textGradient: "45deg, $blue600 -10%, $black 80%",
+        }}
+        weight="bold"
+      >
+        Sales Forecast  
+      </Text>
+      <Text h3 className="dq-head">Enter the Date to Perfome sales forcast </Text>
+    </div>
+    <div className="sales-inp-menu">
+    <div className="date_picker">
+      {/*  <h1>The selected date : {date}</h1> */}
+      <input
+        type="date"
+        placeholder="enter the date"
+        onChange={(e) => setdate(e.target.value)}
+      ></input>
+    </div>
+
+    <div className="sales_button">
+      <Button className="eda-gh-btn" flat onPress={salesforecast_date}>
+        Analyze
+      </Button>
 
     </div>
+    </div>
+    <div className="sale-forcast-result-cont">
+    <ModalImage
+              className="salesforcast_analyticsimg_size"
+          small={salesforecast_res}
+          large={salesforecast_res}
+          alt="Sales forcast!"
+        />{/*  */}
+    </div>
+  </div>  
   )
 }
 

@@ -1,10 +1,20 @@
-.date_picker{
-    margin-left: 4%;
-    padding-left: 50px;
+.sales-inp-menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 }
+.date_picker{
+    margin-top: .3rem;
+}
+.sale-forcast-result-cont{
+    height: 20rem;
+    width: 100%;
+    display: flex;
 
-
-.sales_button{
-    
-    padding-left: 30rem;
+    justify-content: center;
+}
+.salesforcast_analyticsimg_size{
+    margin-top: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
