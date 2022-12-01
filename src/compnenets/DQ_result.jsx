@@ -21,7 +21,7 @@ import ModalImage from "react-modal-image";
 import { useNavigate } from "react-router-dom"
 
 
-import backicon from '../assets/backicon.jpg'
+
 
 //  importing the images for the graphs
 
@@ -61,17 +61,20 @@ ChartJS.register(
 
 const DQ_result = () => {
 
-  
+
 
     useEffect(() => {
         getData();
     }, []);
 
 
-   /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx codr for back button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+    /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx codr for back button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
     const navigate = useNavigate();
-    const handleHistory = () =>{
+    const handleHistory = () => {
         navigate("/dq_report");
+    }
+    const handleHistoryBtn = () =>{
+        navigate("/dqhistory");
     }
     /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx codr for back button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
@@ -86,6 +89,8 @@ const DQ_result = () => {
 
         });
     };
+
+
     let result_arr = df_eda.slice(-1);
     console.log(result_arr);
     const columns = [
@@ -233,8 +238,6 @@ const DQ_result = () => {
     };
     const navLinkSty1es = ({ isActive }) => {
         return {
-
-
             color: isActive ? 'blue' : 'black'
         }
     }
@@ -480,23 +483,27 @@ const DQ_result = () => {
             <div className="nav-and-eda-head">
                 <div className="eda-head">
                     <div className="nav-back-icon">
-
                         {/*  <Button type="primary">
                             <Icon type="left" />
                             Backward
                         </Button> */}
-                       {/*  <Button
+                        {/*  <Button
                             auto
                             color="error"
                             icon={<backicon fill="currentColor" filled />}
                         /> */}
 
-                        <Button color="error" auto ghost onClick={handleHistory}>
+                        <Button className='nav-back-icon-btn' color="error" auto ghost onClick={handleHistory}>
                             Back
                         </Button>
-
                     </div>
-                    <div className="eda-head-child">
+                    <div  className="nav-back-icon-history">
+                        <Button  color="error" auto ghost onClick={handleHistoryBtn}>
+                            History
+                        </Button>
+                    </div>
+
+                    <div className="eda-head-child-dq-report">
                         <Text
                             h1
                             size={60}

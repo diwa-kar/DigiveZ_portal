@@ -56,6 +56,16 @@
     padding: .5rem;
 }
 
+.btn-mbresultpghistory{
+    padding: '5px 20px 7px 20px';
+    margin-left: 10px;
+    
+}
+
+.btn-mbresultpg{
+    padding: '5px 20px 7px 20px';
+    margin-left: 0px;
+}
 
 
 /* .nav-back-icon-car-price-result{

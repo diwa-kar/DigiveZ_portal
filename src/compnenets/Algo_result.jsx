@@ -213,7 +213,7 @@ const Algo_result = () => {
         <div className="nav-back-icon">
           <div className="btn">
             <Link to="/Algo_analyzser">
-              <button style={{ padding: '5px 20px 7px 20px', margin: '-5px 150px 0px 0px' }}>
+              <button /* style={{ padding: '5px 20px 7px 20px', margin: '-5px 150px 0px 0px' }} */>
                 <a>Back</a>
               </button>
             </Link>

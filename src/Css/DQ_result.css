@@ -171,7 +171,13 @@ table tbody td {
 }
 
 .eda-head-child {
+    width: 100%;
+    margin-left: 5rem;
+}
+
+.eda-head-child-dq-report{
     width: 80%;
+    
 }
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx navigation icon xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
@@ -185,9 +191,18 @@ table tbody td {
 }
 
 .nav-back-icon {
-    width: 20%;
-    margin-top: 45px;
+    width: 10%;
+    margin-top: 40px;
     padding-left: 30px;
+}
+.nav-back-icon-history {
+    width: 10%;
+    margin-top: 39px;
+    margin-left: 10px;
+    margin-right: 0%;
+
+}.nav-back-icon-btn{
+    margin-left: 1rem;
 }
 
 .nav-popover-child {

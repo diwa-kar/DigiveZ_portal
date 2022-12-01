@@ -51,7 +51,7 @@ const Algo_analyser = () => {
         <div className="nav-back-icon">
           <div className="btn">
             <Link to="/options">
-              <button style={{ padding: '5px 20px 7px 20px', margin: '-5px 150px 0px 0px' }}>
+              <button /* style={{ padding: '5px 20px 7px 20px', margin: '-5px 150px 0px 0px' }} */>
                 <a>Back</a>
               </button>
             </Link>
@@ -60,7 +60,7 @@ const Algo_analyser = () => {
         <div className="eda-head-child">
           <Text
             h1
-            size={45}
+            size={50}
             className="dq-head"
             css={{
               textGradient: "45deg, $blue600 -10%, $black 80%",

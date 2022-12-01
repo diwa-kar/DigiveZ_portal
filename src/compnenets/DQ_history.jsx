@@ -3,9 +3,32 @@ import Axios from "axios";
 import { Table } from "antd";
 
 import { Text } from "@nextui-org/react";
+import { Link } from "react-router-dom";
+
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { useNavigate } from "react-router-dom"
+
+
+import { Popover } from "@nextui-org/react";
+
+import { NavLink } from "react-router-dom";
+
+import ModalImage from "react-modal-image";
+import { Button } from "@nextui-org/react";
+
+
+import { faBars, faCheck, faDatabase, faGear, faHome, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 const DQ_history = () => {
+
+    const navLinkSty1es = ({ isActive }) => {
+        return {
+          color: isActive ? 'blue' : 'black'
+        }
+      }
 
     const [state, setstate] = useState([]);
     const [loading, setloading] = useState(true);
@@ -81,13 +104,13 @@ const DQ_history = () => {
             dataIndex: "date_time",
             width: 150,
         },
-      
+
     ];
 
     return (
         <div>
 
-            <div className="eda-head">
+          {/*   <div className="eda-head">     
                 <Text
                     h1
                     size={40}
@@ -99,8 +122,100 @@ const DQ_history = () => {
                 >
                     EDA analysis History
                 </Text>
-            </div>
-            {loading ? (
+                
+            </div> */}
+            <div className="eda-head">
+        <div className="nav-back-icon">
+        <div className="btn">
+            <Link to="/dqresult">
+              <button /* style={{ padding: '5px 20px 7px 20px', margin: '-5px 150px 0px 0px' }} */>
+                <a>Back</a>
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="eda-head-child">
+          <Text
+            h1
+            size={45}
+            className="dq-head"
+            css={{
+              textGradient: "45deg, $blue600 -10%, $black 80%",
+            }}
+            weight="bold"
+          >
+           Data Quality Report History
+          </Text>
+        </div>
+        <div className="nav-popover">
+          <div className="nav-popover-child">
+            <Popover placement="left">
+              <Popover.Trigger>
+                <Button auto flat>
+                  <FontAwesomeIcon icon={faBars} />
+                </Button>
+              </Popover.Trigger>
+              <Popover.Content>
+                <div className="popover-after-cont">
+                  <ul className="sidenav__listitems-main">
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/modelbuilder">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faHome}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Home</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/modelbuilder">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faDatabase}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Model builder</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbresult">
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faSearch}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Sales Forcast</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbhistory">
+                        {" "}
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faCheck}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">EDA</h3>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink style={navLinkSty1es} to="/mbhistory">
+                        {" "}
+                        <FontAwesomeIcon
+                          className="sidenav_icon"
+                          icon={faGear}
+                        />{" "}
+                        <h3 className="sidenav__mainhed">Algo analyzer</h3>
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
+              </Popover.Content>
+            </Popover>
+          </div>
+        </div>
+      </div>
+
+            
+         <div className=" mb-result-history-table">
+         {loading ? (
                 "Loading"
             ) : (
                 <Table
@@ -111,6 +226,7 @@ const DQ_history = () => {
                     scroll={{ y: 510 }}
                 />
             )}
+         </div>
         </div>
     )
 }
